@@ -28289,10 +28289,11 @@ listenToEvents: function(){
    var row = table.insertRow(1);
 	 var cell1 = row.insertCell(0);
 	 var cell2 = row.insertCell(1);
-	 var cell3 = row.insertCell(2);
+     var cell3 = row.insertCell(2);
+     var result = _url.link(_url);
    cell1.innerHTML = _head;
    cell2.innerHTML = _desc;
-   cell3.innerHTML = _url;
+   cell3.innerHTML = result;
    }
  });
  instance.recommendationReceieved({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
