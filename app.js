@@ -28259,7 +28259,16 @@ window.App = {
       App.listenToEvents();
       document.getElementById("connected").innerHTML=accounts.join("<br />");
     });
-  },
+	},
+	
+	checkURL: function(abc) {
+		var string = abc.value;
+		if (!~string.indexOf("http")) {
+			string = "http://" + string;
+		}
+		abc.value = string;
+		return abc
+	},
 
 listenToEvents: function(){
 
@@ -28278,9 +28287,9 @@ listenToEvents: function(){
 	 }
 	 else{
    var row = table.insertRow(1);
-   var cell1 = row.insertCell(0);
-   var cell2 = row.insertCell(1);
-   var cell3 = row.insertCell(2);
+	 var cell1 = row.insertCell(0);
+	 var cell2 = row.insertCell(1);
+	 var cell3 = row.insertCell(2);
    cell1.innerHTML = _head;
    cell2.innerHTML = _desc;
    cell3.innerHTML = _url;
@@ -28308,8 +28317,8 @@ listenToEvents: function(){
   var cell5 = row.insertCell(4);
   var objInputCheckBox = document.createElement("input");
   objInputCheckBox.type = "checkbox";
-    cell1.appendChild(objInputCheckBox);
-    cell2.innerHTML = recNo;
+  cell1.appendChild(objInputCheckBox);
+  cell2.innerHTML = recNo;
   cell3.innerHTML = recc;
   cell4.innerHTML = giver;
   cell5.innerHTML = contact;}
