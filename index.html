@@ -1,169 +1,204 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>CV - Urja Pawar</title>
+  <title>MultiSignature Wallet</title>
   <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
   <script src="./app.js"></script>
 
   <style>
-    body {font-family: Arial, Helvetica, sans-serif;}
 
-   table {
-    border-collapse: collapse;
-    width: 100%;
-}
-th{
-  background-color: #01579B;
-  color: #f2f2f2;
-  text-align: left;
-  padding: 8px;
-}
-body { 
-    background: darkslateblue url("bg_2.jpg") no-repeat fixed center;
-    background-size: contain;
-    width: 70%;
-}
-
-@media only screen and (min-width: 400px) {
-    body { 
-      background: darkslateblue url("ff.jpg") no-repeat fixed center;
-    background-size:cover;
-    width: 70%;
-    }
- td {
+  table {
+      border-collapse: collapse;
+      width: 100%;
+  }
+  th{
+    background-color: #FF5722;
+    color: #fff;
     text-align: left;
     padding: 8px;
+  }
+
+   td {
+      text-align: left;
+      padding: 8px;
+  }
+
+  tr:nth-child(even) {background-color: #FF8A65;}
+  tr:nth-child(odd) {background-color: #FFAB91}
+  tr:hover {background-color:#FFCCBC;}
+
+  input[type=text] {
+    width: 50%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 3px solid #FFECB3;
+    -webkit-transition: 0.5s;
+    transition: 0.5s;
+    outline: none;
 }
 
-tr:nth-child(even) {background-color: #E1F5FE;}
-tr:nth-child(odd) {background-color: #81D4FA}
-tr:hover {background-color:#f5f5f5;}
-table td.shrink {
-    white-space:nowrap
+input[type=text]:focus {
+    border: 3px solid #FF6F00;
 }
-table td.expand {
-    width: 99%
+  h3{
+    color: #E1F5FE;
+    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-weight: 400;
+
+  }
+  h2{
+    color: #fff;
+
+  }
+  h1{
+    color: #fff;
+    text-align: center;
+  }
+.final{
+  color:#fff;
 }
 
-h3{
-  color: #E1F5FE;
-  font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  font-weight: 400;
-   
-}
-h2{
-  color: #fff;
 
-   
-}
-h1{
-  text-align: right;
-  position: absolute; top: 20px; right: 50px;
-}
-    label{ float: left; 
-      width: 100%;}
-    input{
-        width: 100%;
-        padding: 12px;
-        border: 1px solid #E3F2FD;
-        border-radius: 4px;
-        box-sizing: border-box;
-        margin-top: 6px;
-        margin-bottom: 16px;
-        resize: vertical;
-    }
-   
-    button {background-color: #0288D1;
-        color: white;
-        padding: 12px 20px;
-        border: none;
-        border-radius: 4px;
-        cursor: pointer;
-    }
-   
-    button:hover {
-        background-color: #01579B;
-    }
-    
-    .container {
-        border-radius: 5px;
-        background-color: #BBDEFB;
-        padding: 20px;
-    }
-    </style>
+  button {background-color: #FFA000;
+         color: white;
+         padding: 12px 20px;
+         border: none;
+         border-radius: 4px;
+         cursor: pointer;
+     }
+  body {
+      background: url("four.gif") no-repeat fixed center;
+      background-size: cover;
+      width: 70%;
+  }
+  .Owner{
+    color: #E1F5FE;
+  }
+  .initial{
+    color: #E1F5FE;
+  }
+  .utility{
+    width: 20%;
+  }
+  .accept{
+    background-color: #558B2F;
+    width: 20%;
+  }
+  .reject{
+    background-color: #EF5350;
+    width: 20%;
+  }
+
+  </style>
+
+
 
 </head>
-<body link="#01579B">
-  <h1>Let's get everything decentralised! 
-  <br>Starting off with My CV!</h1>
-  <h2>Hey There! Find here all my work related to DApps development!</h2>
-  <h3>My Projects! </h3>
-  <div style="overflow-x:auto;">
-  <table id="projects" style="width: 100%;">
-    <tr>
-      <th>Project</th>
-      <th>Description</th>
-      <th>URL</th>
-    </tr>
-  </table>
-  </div>
-  <br>
-  <br>
-  <h3>My Recommendations!</h3>
-  <div class="container"style="overflow-x:auto;">
-  <table id="recs">
-    <tr>
-      <th>Select</th>
-      <th>Rec No.</th>
-      <th>Recommendations</th>
-      <th>Given By</th>
-      <th>Contact details</th>
-    </tr>
-  </table>
- 
-  <br><br>
-  
-      <form onsubmit="App.deleteRec(); return false;">   
-          <label for="ctr" width:100%>Something fishy? Delete the recommendation by selecting check boxes one by one</label>
-          <br><br>
-          <button type="submit">Delete Recommendation</button>
-      
+<body><br>
+<div class="initial" id="ini" style="display:block;">
+  <h1>Wait a bit! We are fueling up!</h1><br>
+  <h3>Wanna contribute to give birth to exciting list of projects!? </h3><br><br>
+    <h3>Support us by your contributon! <t>
+      <form>
+        <input type="text" id="amount" name="amt" placeholder="Amount (in Wei)"> <button type="button" onClick="App.sendEther()">Send ether!</button></h3>
       </form>
-    </div>
-    <br><br>
-    <h3>Add Projects!</h3>
-  <div class="container">
-   
-  <form onsubmit="App.addProject(); return false;">
-      <label for="head">What's the cool name?</label>
-      <input type="text" class="form-control" id="head" placeholder="Kickass Project">
-      <label for="desc">A brief description</label>
-      <input type="text" class="form-control" id="desc" placeholder="Provide description here (120 words)">
-      <label for="url">Project URL</label>
-      <input type="url" class="form-control" id="url" placeholder="Link to the project (Ex: Github URL)" onblur="App.checkURL(this)">
-      <br><br>
-      <button type="submit">Submit your project</button>
-  </form>
-  </div>
-  <br><br>
-  
-  <div class="container">
-  <form onsubmit="App.addRecc(); return false;">   
-      <label for="recc" width:100%>Wanna recommend me?</label>
-      <input type="text"  id="recc" placeholder="Write me a recommendation!">
-      <label for="name">Name</label>
-      <input type="text" id="name" placeholder="Your name">
-      <label for="contact">Your contact details</label>
-      <input type="email"  id="contact" placeholder="Email">   
-      <br><br>
-      <button type="submit">Recommend Urja</button>
-  
-  </form>
-</div>
-<h4>To know more about me visit <a href="https://www.urjapawar.in">urjapawar.in</a></h4>
-  <br><br>
-  Contract is at address
-  <span id="connected"></span>
+
+
   <br>
+  <br>
+  If you are one of the members of signing community, click here to end contribution period
+  <br>
+  <button type="button" onClick="App.endContri()">End contribution</button>
+  <span id="isOpen"></span>
+  <br>
+  <br>
+</div>
+
+  <div class="final" id="fin" style="display:none;">
+      <h1>Get funded for your projects right now!</h1>
+      <br>
+      <br>
+    <h3>Open Proposals</h3>
+    <div style="overflow-x:auto;">
+    <table id="open">
+        <tr>
+          <th>Select</th>
+          <th>From</th>
+          <th>Amount</th>
+        </tr>
+      </table>
+     
+      <br>
+      <br>
+      </div>
+      <br>
+      <class="final"> Select the proposals for approving or rejecting (only for signers)</>
+      <br>
+      <br>
+<button type="button" class="accept" onClick="App.accept()">Accept!</button>  <button type="button" class="reject" onClick="App.reject()">Reject!</button>
+      <br>
+      <br>
+      <class="final"> Submit proposal here to get funded for your project</>
+      <form>
+        <input type="text" id="prop_amt" name="amt" placeholder="Amount (in wei)"> &nbsp <button type="button" class="utiliy" onClick="App.submitProp()">Submit Proposal</button></h3>
+      </form>
+      <h5>Add proposal only if fresh or after fully withdrawing old proposals</h5>
+      <br>
+      <br>
+      <h3>Accepted Proposals!</h3>
+      <div class="container"style="overflow-x:auto;">
+      <table id="accept">
+        <tr>
+          <th>Address</th>
+          <th>Amount</th>
+        </tr>
+      </table>
+    <br>
+      <form>
+        <input type="text" id="with_amt" name="amount" placeholder="Amount (in wei)">&nbsp<button type="button" class="utiliy" onClick="App.withdraw()">Withdraw money</button></h3>
+      </form>
+
+
+</div>
+<br>
+ <button type="button" onClick="App.updateVotes()">Check your proposal status</button>
+ <h5>Make sure to call through beneficiary account</h5>
+ <span id="status" class="final"></span>
+
+ 
+  <span id="myprop" class="final"></span>
+  <br>
+  <br>
+  <button type="button" onClick="App.getAllc()">Know our contributors</button><br>
+  <span id="allC" class="final"></span>
+  <br>
+  <br>
+
+
+
+  </div>
+  <br>
+  <br>
+  <div class="Owner">
+    <b>Contract Balance: </b> <span id="bal"></span>
+    
+    <br>
+
+      <b>OWNER:</b>
+    <span id="owner"></span>
+
+  </div>
+<hr>
+<br>
+<b class="Owner">Events</b>
+<hr>
+  <div class="Owner">
+    
+    <span id="events"></span>
+
+  </div>
+
+
 </body>
 </html>

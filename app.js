@@ -28075,38 +28075,17 @@ Object.defineProperty(__webpack_exports__, "__esModule", { value: true });
 // Import libraries we need.
 
 
+
 var abi = [
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "heading",
-				"type": "string"
-			},
-			{
-				"name": "description",
-				"type": "string"
-			},
-			{
-				"name": "URL",
-				"type": "string"
+				"name": "_beneficiary",
+				"type": "address"
 			}
 		],
-		"name": "addProject",
-		"outputs": [],
-		"payable": false,
-		"stateMutability": "nonpayable",
-		"type": "function"
-	},
-	{
-		"constant": false,
-		"inputs": [
-			{
-				"name": "recCtr",
-				"type": "uint256"
-			}
-		],
-		"name": "deleteRecommendation",
+		"name": "approve",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -28115,7 +28094,7 @@ var abi = [
 	{
 		"constant": false,
 		"inputs": [],
-		"name": "kill",
+		"name": "endContributionPeriod",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
@@ -28125,64 +28104,119 @@ var abi = [
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"name": "projectCtr",
-				"type": "uint256"
-			},
-			{
-				"indexed": false,
-				"name": "heading",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "desc",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "url",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "msg",
-				"type": "string"
+				"indexed": true,
+				"name": "_beneficiary",
+				"type": "address"
 			}
 		],
-		"name": "projectAdded",
+		"name": "ProposalRemoved",
 		"type": "event"
 	},
 	{
 		"anonymous": false,
 		"inputs": [
 			{
-				"indexed": false,
-				"name": "recCtr",
-				"type": "uint256"
-			},
+				"indexed": true,
+				"name": "_beneficiary",
+				"type": "address"
+			}
+		],
+		"name": "ProposalDeleted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
 			{
 				"indexed": true,
-				"name": "sender",
+				"name": "_beneficiary",
 				"type": "address"
 			},
 			{
 				"indexed": false,
-				"name": "rec",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "auth",
-				"type": "string"
-			},
-			{
-				"indexed": false,
-				"name": "contact",
-				"type": "string"
+				"name": "_valueInWei",
+				"type": "uint256"
 			}
 		],
-		"name": "recommendationReceieved",
+		"name": "WithdrawPerformed",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_rejecter",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "_beneficiary",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_valueInWei",
+				"type": "uint256"
+			}
+		],
+		"name": "ProposalRejected",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_approver",
+				"type": "address"
+			},
+			{
+				"indexed": true,
+				"name": "_beneficiary",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_valueInWei",
+				"type": "uint256"
+			}
+		],
+		"name": "ProposalApproved",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_beneficiary",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_valueInWei",
+				"type": "uint256"
+			}
+		],
+		"name": "ProposalSubmitted",
+		"type": "event"
+	},
+	{
+		"anonymous": false,
+		"inputs": [
+			{
+				"indexed": true,
+				"name": "_contributor",
+				"type": "address"
+			},
+			{
+				"indexed": false,
+				"name": "_valueInWei",
+				"type": "uint256"
+			}
+		],
+		"name": "ReceivedContribution",
 		"type": "event"
 	},
 	{
@@ -28190,43 +28224,250 @@ var abi = [
 		"inputs": [
 			{
 				"indexed": false,
-				"name": "recCtr",
-				"type": "uint256"
+				"name": "x",
+				"type": "bool"
 			},
 			{
 				"indexed": false,
-				"name": "giver",
-				"type": "string"
+				"name": "_valueInWei",
+				"type": "uint256"
 			}
 		],
-		"name": "recommendationDeleted",
+		"name": "Left",
 		"type": "event"
+	},
+	{
+		"constant": false,
+		"inputs": [],
+		"name": "knowStatus",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
 	},
 	{
 		"constant": false,
 		"inputs": [
 			{
-				"name": "rec",
-				"type": "string"
-			},
-			{
-				"name": "auth",
-				"type": "string"
-			},
-			{
-				"name": "contact",
-				"type": "string"
+				"name": "_beneficiary",
+				"type": "address"
 			}
 		],
-		"name": "WriteRecommendation",
+		"name": "reject",
 		"outputs": [],
 		"payable": false,
 		"stateMutability": "nonpayable",
 		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_valueInWei",
+				"type": "uint256"
+			}
+		],
+		"name": "submitProposal",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"constant": false,
+		"inputs": [
+			{
+				"name": "_valueInWei",
+				"type": "uint256"
+			}
+		],
+		"name": "withdraw",
+		"outputs": [],
+		"payable": false,
+		"stateMutability": "nonpayable",
+		"type": "function"
+	},
+	{
+		"payable": true,
+		"stateMutability": "payable",
+		"type": "fallback"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "creator",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getApproved",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getBal",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getBalance",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getBeneficiaryProposal",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getcheckl",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [
+			{
+				"name": "_contributor",
+				"type": "address"
+			}
+		],
+		"name": "getContributorAmount",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "getProposed",
+		"outputs": [
+			{
+				"name": "",
+				"type": "uint256"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "listContributors",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "listOpenBeneficiariesProposals",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address[]"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "open",
+		"outputs": [
+			{
+				"name": "",
+				"type": "bool"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
+	},
+	{
+		"constant": true,
+		"inputs": [],
+		"name": "owner",
+		"outputs": [
+			{
+				"name": "",
+				"type": "address"
+			}
+		],
+		"payable": false,
+		"stateMutability": "view",
+		"type": "function"
 	}
-];                                                              // Set contract ABI
+]; // Set contract ABI
 var newContract = web3.eth.contract(abi);      
-const addressA = '0x97bbbae2cdf97a460ae714593e3488e8cbbfcabf';             // Contract object
+const addressA = '0x6441637c01de46577cbc6c5b970129d41a8cddfd';             // Contract object
 var instance = newContract.at(addressA);  // instance of the contract
 
 var accounts;
@@ -28256,87 +28497,60 @@ window.App = {
       account = accounts[0];
 
       
-      App.listenToEvents();
-      document.getElementById("connected").innerHTML=accounts.join("<br />");
+	  App.getOwner();
+      App.bal();
+      App.isOpen();
+			App.listenToEvents();
+		
     });
-	},
-	
-	checkURL: function(abc) {
-		var string = abc.value;
-		if (!~string.indexOf("http")) {
-			string = "http://" + string;
+  },
+
+  isOpen: function(){
+    instance.open(function (error, result){
+			if (error) {
+				console.error(error);
+		} else {						
+			if(result==true){
+				document.getElementById('fin').style.display = "block";
+        document.getElementById('ini').style.display = "none";
+			}		
 		}
-		abc.value = string;
-		return abc
-	},
+		 });
+       
+  },
+  listenToEvents: function(){
 
-listenToEvents: function(){
+  instance.ReceivedContribution({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
+    App.bal();
+	});
+	instance.Left({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
+		var val=event.args._valueInWei;
+		var r=event.args.x;
+	
+		var td = document.getElementById("status");
+		if(r==false){
+		td.innerHTML="Your Proposal status is pending with amount "+val.toString();}
+		else{
+			td.innerHTML="Your Proposal status is approved with amount "+val.toString();
+		}
+	});
 
- instance.projectAdded({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
-   var _head=event.args.heading;
-   var _desc=event.args.desc;
-   var _url=event.args.url;
-	 var table = document.getElementById("projects");
-	 var heading="xyz";
-	 var url="xyz";
-	 if(table.rows.length > 1){
-	 	heading=table.rows[1].cells[0].innerHTML;
-	 	url=table.rows[1].cells[2].innerHTML;}
-	 if(heading==_head && url==_url){
-		 console.log("Project successfully added");
-	 }
-	 else{
-   var row = table.insertRow(1);
-	 var cell1 = row.insertCell(0);
-	 var cell2 = row.insertCell(1);
-	 var cell3 = row.insertCell(2);
-	 var result = _url.link(_url);
-   cell1.innerHTML = _head;
-   cell2.innerHTML = _desc;
-   cell3.innerHTML = result;
-   }
- });
- instance.recommendationReceieved({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
-  var recc=event.args.rec;
-  var giver=event.args.auth;
-  var contact=event.args.contact;
-  var recNo=event.args.recCtr;
-	var table = document.getElementById("recs");
-	var recnumber=0;
-	 if(table.rows.length > 1){
-		recnumber=parseInt((table.rows[1].cells[1].innerHTML).toString());	 
-	}
-	 if(recnumber==recNo){
-		 console.log("Successfully added recommendation");
-	 }
-	 else{
-  var row = table.insertRow(1);
-  var cell1 = row.insertCell(0);
-  var cell2 = row.insertCell(1);
-  var cell3 = row.insertCell(2);
-  var cell4 = row.insertCell(3);
-  var cell5 = row.insertCell(4);
-  var objInputCheckBox = document.createElement("input");
-  objInputCheckBox.type = "checkbox";
-  cell1.appendChild(objInputCheckBox);
-  cell2.innerHTML = recNo;
-  cell3.innerHTML = recc;
-  cell4.innerHTML = giver;
-  cell5.innerHTML = contact;}
-  
- });
- instance.recommendationDeleted({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
-  var info=event.args.giver.toString();
-  var ctr=event.args.recCtr.toNumber();
-  //console.log(info," ", ctr);
-  
-  var objTable = document.getElementById("recs");
+
+	instance.ProposalRemoved({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var addr=event.args._beneficiary.toString();
+		var value;
+  var objTable = document.getElementById("open");
   var iRow = objTable.rows.length;
   if (objTable.rows.length > 1) {
 		for (var i = 0; i < objTable.rows.length; i++) {
-      var x=parseInt((objTable.rows[i].cells[1].innerHTML).toString());
-        if(x==ctr){
-        console.log("Some recommendation(s) were deleted");
+			var x=(objTable.rows[i].cells[1].innerHTML).toString();
+			value=parseInt(objTable.rows[i].cells[2].innerHTML);
+        if(addr==x){
+        console.log("Some proposals were approved/rejected");
 				objTable.deleteRow(i);
 				iRow--;
 				i--;
@@ -28345,45 +28559,162 @@ listenToEvents: function(){
     }
     
 	}
- });
+   
+	});
 
-},
 
-addRecc: function(){
-   console.log("HERE-RECC");
-   var _recc=document.getElementById("recc").value;
-   var _name=document.getElementById("name").value;
-   var _contact=document.getElementById("contact").value;
-    instance.WriteRecommendation(_recc,_name,_contact, function(error, result){
-			if (error) {
-				console.error(error);
-		} else {
+	instance.ProposalDeleted({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
+		var addr=event.args._beneficiary.toString();
+		var value;
+  var objTable = document.getElementById("open");
+  var iRow = objTable.rows.length;
+  if (objTable.rows.length > 1) {
+		for (var i = 0; i < objTable.rows.length; i++) {
+			var x=(objTable.rows[i].cells[1].innerHTML).toString();
+			value=parseInt(objTable.rows[i].cells[2].innerHTML);
+        if(addr==x){
+        console.log("Some proposals were approved/rejected");
+				objTable.deleteRow(i);
+				iRow--;
+				i--;
+    }
 			
-			console.log("Recommendation request submitted");
-		
-			
-		}
+    }
+    
+	}
+	var table = document.getElementById("accept");
+	var row = table.insertRow(1);
+	var cell1 = row.insertCell(0);
+	var cell2 = row.insertCell(1);
+		cell1.innerHTML = addr;
+		cell2.innerHTML = value;
+	
+
+	});
+	
+	instance.WithdrawPerformed({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
+		App.bal();
+
+	});
+  instance.ProposalSubmitted({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
+    var ben=event.args._beneficiary.toString();
+    var val=event.args._valueInWei;
+    var table = document.getElementById("open");
+    var row = table.insertRow(1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+
+    var objInputCheckBox = document.createElement("input");
+    objInputCheckBox.type = "checkbox";
+      cell1.appendChild(objInputCheckBox);
+      cell2.innerHTML = ben;
+			cell3.innerHTML = val;
+
+
+  });
+
+  instance.ProposalApproved({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
+   
+	});
+	
+	instance.ProposalRejected({},{fromBlock:0, toBlock:'latest'}).watch(function(error, event){
+		var box = document.getElementById("events");
+		box.innerHTML+=JSON.stringify(event);
    
   });
- },
 
- deleteRec: function(){
-  
-    var objTable = document.getElementById("recs");
+
+},
+updateVotes: function(){
+
+	instance.knowStatus(function(error,result){
+
+		if(error){
+			console.error(error);
+		}
+else{
+	console.log(result);
+}
+	});
+	
+	
+},
+
+  getOwner: function() {
+		var val;
+    instance.owner(function (error, result){
+			if (error) {
+				console.error(error);
+		} else {				
+				
+				val=result;
+				var balance_element = document.getElementById("owner");
+		 balance_element.innerHTML = val.toString();
+			
+		}
+		 });
+		 
+  },
+
+  sendEther: function() {
+		
+      var amt=document.getElementById("amount").value;
+      web3.eth.sendTransaction({from: account, to:instance.address, value: amt},function (error, result){
+				if (error) {
+					console.error(error);
+			} else {				
+					App.bal();
+			
+			}
+			 });
+   
+
+  },
+  endContri: function() {
+    instance.endContributionPeriod(function (error, result){
+			if (error) {
+				console.error(error);
+		} else {				
+			document.getElementById('fin').style.display = "block";
+			document.getElementById('ini').style.display = "none";
+			document.body.background = "one.gif";
+		}
+		 });
+  },
+  submitProp: function() {
+		var amt=document.getElementById("prop_amt").value;
+    instance.submitProposal(amt,function (error, result){
+			if (error) {
+				console.error(error);
+		} 
+		 });
+  },
+  accept: function() {
+		var objTable = document.getElementById("open");
     var iRow = objTable.rows.length;
     var counter = 0;
     if (objTable.rows.length > 1) {
       for (var i = 0; i < objTable.rows.length; i++) {
         var chk = objTable.rows[i].cells[0].childNodes[0];
         if (chk.checked) {
-					var x=parseInt((objTable.rows[i].cells[1].innerHTML).toString());
+					var x=(objTable.rows[i].cells[1].innerHTML).toString();
+				
 					counter++;
-          instance.deleteRecommendation(x,function(error,result){
+          instance.approve(x,function(error,result){
 						if (error) {
 							console.error(error);
 					} else {
 						
-							console.log("Deletion request made, if you are the owner recommendations will be deleted soon...");
+							console.log("Approval request made");
 						
 						
 					}
@@ -28396,46 +28727,94 @@ addRecc: function(){
       /*** Alert user if there are no rows being added ***/
       alert("There are no rows being added");
     } 
-  
-},
-
- addProject: function(){
-   //console.log("HERE");
-   var _head=document.getElementById("head").value;
-   var _desc=document.getElementById("desc").value;
-   var _url=document.getElementById("url").value;
-   console.log("HERE",_head,_desc,_url);
-   instance.addProject(_head,_desc,_url, function (error, result){
-		if (error) {
-			console.error(error);
-	} else {
-		
-			console.log("Adding projects if you are the owner, please wait...");
-		//	window.location.reload();
-		
+  },
+  reject: function() {
+		var objTable = document.getElementById("open");
+    var iRow = objTable.rows.length;
+    var counter = 0;
+    if (objTable.rows.length > 1) {
+      for (var i = 0; i < objTable.rows.length; i++) {
+        var chk = objTable.rows[i].cells[0].childNodes[0];
+        if (chk.checked) {
+					var x=(objTable.rows[i].cells[1].innerHTML).toString();
+				
+					counter++;
+          instance.reject(x,function(error,result){
+						if (error) {
+							console.error(error);
+					} else {
+						
+							console.log("Rejection request made");
+						
+						
+					}
+         
+      });}}
+      if (counter == 0) {
+        alert("Please select the row that you want to delete.");
+      }
+    }else{
+      /*** Alert user if there are no rows being added ***/
+      alert("There are no rows being added");
+    } 
+  },
+    getProp: function() {
+			instance.getSigner1(function (error, result){
+				if (error) {
+					console.error(error);
+			} else {				
+			console.log(result);
+			}
+			 });
+    
+    },
+    getAllc: function() {
+		instance.listContributors(function (error, result){
+				if (error) {
+					console.error(error);
+			} else {				
+				console.log(result);
+				var balance_element = document.getElementById("allC");
+        balance_element.innerHTML = result.valueOf();
+			
+			}
+			 });
+    
+    },
+    withdraw: function(){
+			var amt=document.getElementById("with_amt").value;
+			instance.withdraw(amt,function (error, result){
+				if (error) {
+					console.error(error);
+			} else {				
+				console.log(result);
+			
+			}
+			 });
+		},
+    bal: function() {
+			var value= instance.getBal(function (error, result){
+				if (error) {
+					console.error(error);
+			} else {				
+				var balance_element = document.getElementById("bal");
+        balance_element.innerHTML = result.valueOf();
+			
+			}
+			 });
+    },
 	}
-	 });
-
- },
-
-  sendCoin: function() {
-    var self = this; 
-  }
-
-};
-
+    
 window.addEventListener('load', function() {
   if (typeof web3 !== 'undefined') {
     console.warn("Using web3 detected from external source. If you find that your accounts don't appear or you have 0 MetaCoin, ensure you've configured that source properly. If using MetaMask, see the following link. Feel free to delete this warning. :) http://truffleframework.com/tutorials/truffle-and-metamask")
     window.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(web3.currentProvider);
   } else {
     console.warn("No web3 detected. Falling back to http://127.0.0.1:9545. You should remove this fallback when you deploy live, as it's inherently insecure. Consider switching to Metamask for development. More info here: http://truffleframework.com/tutorials/truffle-and-metamask");
-    window.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(new __WEBPACK_IMPORTED_MODULE_1_web3___default.a.providers.HttpProvider("http://127.0.0.1:8545"));
+    window.web3 = new __WEBPACK_IMPORTED_MODULE_1_web3___default.a(new __WEBPACK_IMPORTED_MODULE_1_web3___default.a.providers.WebsocketProvider("http://127.0.0.1:8545"));
   }
-
   App.start();
 });
-
 
 /***/ }),
 /* 74 */
