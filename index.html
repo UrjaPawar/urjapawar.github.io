@@ -1,204 +1,74 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>MultiSignature Wallet</title>
-  <link href='https://fonts.googleapis.com/css?family=Open+Sans:400,700' rel='stylesheet' type='text/css'>
-  <script src="./app.js"></script>
 
-  <style>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">	
+	
+	<!-- OPTIONAL: description -->
+	<meta name="description" content="">
+	
+	<!-- OPTIONAL: author -->
+	<meta name="author" content="Urja Pawar">
 
-  table {
-      border-collapse: collapse;
-      width: 100%;
-  }
-  th{
-    background-color: #FF5722;
-    color: #fff;
-    text-align: left;
-    padding: 8px;
-  }
+	<title>Urja Pawar Home</title>
 
-   td {
-      text-align: left;
-      padding: 8px;
-  }
+	<!-- Link the main.css stylesheet -->
+	<link href="blogs/styles/reset.css" rel="stylesheet">
+	<link href="blogs/styles/-debug.css" rel="stylesheet">
+	<link href="css/index-main.css" rel="stylesheet">
+	<link href="blogs/styles/nav.css" rel="stylesheet">
+	<link href="blogs/styles/footer-blog.css" rel="stylesheet">
+	<link href="css/index-article.css" rel="stylesheet">
+    <link href="css/updates.css" rel="stylesheet">
+    <link href="blogs/styles/article-figure.css" rel="stylesheet">
+	
+	<!-- OPTIONAL: Google Fonts (don't forget to edit main.css also) -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,400,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=IBM+Plex+Serif:300,400,400i,600,600i,700,700i,800" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu+Mono:400,400i,700,700i" rel="stylesheet">
 
-  tr:nth-child(even) {background-color: #FF8A65;}
-  tr:nth-child(odd) {background-color: #FFAB91}
-  tr:hover {background-color:#FFCCBC;}
+ </head>
+ <body>
 
-  input[type=text] {
-    width: 50%;
-    padding: 12px 20px;
-    margin: 8px 0;
-    box-sizing: border-box;
-    border: 3px solid #FFECB3;
-    -webkit-transition: 0.5s;
-    transition: 0.5s;
-    outline: none;
-}
+	<nav>
+        <a class = "nav-home" href="index.html">HOME</a>
+        <a class = "nav-project" href="projects.html">PROJECTS</a>
+        <a class = "nav-blog" href="musings.html">BLOG</a>
+        <a class = "nav-resume" href="files/urja_pawar_resume.pdf">RESUME</a>
+    </nav>
 
-input[type=text]:focus {
-    border: 3px solid #FF6F00;
-}
-  h3{
-    color: #E1F5FE;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
+    <article>
+        <div class="top-box">
+            <h1 style="text-align: center;">Urja Pawar</h1>
+        </div>
 
-  }
-  h2{
-    color: #fff;
+    	<p style="padding-top: 1.5rem;">
+            Hi! I am Urja Pawar from India. Right now a Ph.D. Scholar in the domain of AI. I am currently in Ireland for my studies. Before this, I have done my B.Tech from NIT Raipur, India, and worked as a Software Engineer in Optum for more than a year. I absolutely love Software Engineering and aspire to become a good technical leader in the industry. Other than this, I am an excellent cook (Indian dishes, of course) and dancer. I am not a fan of movies and series but sometimes enjoy content from comedy genre.
+        </p>
 
-  }
-  h1{
-    color: #fff;
-    text-align: center;
-  }
-.final{
-  color:#fff;
-}
+        <p>
+            I tried indulging myself in various career options and have found roles related to software/hardware architectural decision making to be extremely inspiring. I believe Software Engineering is the pillar over which many more advancements will be brought and I enjoy being a part of it. I, very early on have started to believe in a 9-5 job, hanging out with colleagues, working on an assigned project as if it's my own, and enjoying carefree weekends. Although my belief might change after a while, for now, I will be happy with a challenging role assigned.
+        </p>
 
 
-  button {background-color: #FFA000;
-         color: white;
-         padding: 12px 20px;
-         border: none;
-         border-radius: 4px;
-         cursor: pointer;
-     }
-  body {
-      background: url("four.gif") no-repeat fixed center;
-      background-size: cover;
-      width: 70%;
-  }
-  .Owner{
-    color: #E1F5FE;
-  }
-  .initial{
-    color: #E1F5FE;
-  }
-  .utility{
-    width: 20%;
-  }
-  .accept{
-    background-color: #558B2F;
-    width: 20%;
-  }
-  .reject{
-    background-color: #EF5350;
-    width: 20%;
-  }
+        <p>
+            Cheers,
+            <br>
+            <b>Urja</b>
+        </p>
 
-  </style>
+    </article>
 
-
-
-</head>
-<body><br>
-<div class="initial" id="ini" style="display:block;">
-  <h1>Wait a bit! We are fueling up!</h1><br>
-  <h3>Wanna contribute to give birth to exciting list of projects!? </h3><br><br>
-    <h3>Support us by your contributon! <t>
-      <form>
-        <input type="text" id="amount" name="amt" placeholder="Amount (in Wei)"> <button type="button" onClick="App.sendEther()">Send ether!</button></h3>
-      </form>
-
-
-  <br>
-  <br>
-  If you are one of the members of signing community, click here to end contribution period
-  <br>
-  <button type="button" onClick="App.endContri()">End contribution</button>
-  <span id="isOpen"></span>
-  <br>
-  <br>
-</div>
-
-  <div class="final" id="fin" style="display:none;">
-      <h1>Get funded for your projects right now!</h1>
-      <br>
-      <br>
-    <h3>Open Proposals</h3>
-    <div style="overflow-x:auto;">
-    <table id="open">
-        <tr>
-          <th>Select</th>
-          <th>From</th>
-          <th>Amount</th>
-        </tr>
-      </table>
-     
-      <br>
-      <br>
-      </div>
-      <br>
-      <class="final"> Select the proposals for approving or rejecting (only for signers)</>
-      <br>
-      <br>
-<button type="button" class="accept" onClick="App.accept()">Accept!</button>  <button type="button" class="reject" onClick="App.reject()">Reject!</button>
-      <br>
-      <br>
-      <class="final"> Submit proposal here to get funded for your project</>
-      <form>
-        <input type="text" id="prop_amt" name="amt" placeholder="Amount (in wei)"> &nbsp <button type="button" class="utiliy" onClick="App.submitProp()">Submit Proposal</button></h3>
-      </form>
-      <h5>Add proposal only if fresh or after fully withdrawing old proposals</h5>
-      <br>
-      <br>
-      <h3>Accepted Proposals!</h3>
-      <div class="container"style="overflow-x:auto;">
-      <table id="accept">
-        <tr>
-          <th>Address</th>
-          <th>Amount</th>
-        </tr>
-      </table>
-    <br>
-      <form>
-        <input type="text" id="with_amt" name="amount" placeholder="Amount (in wei)">&nbsp<button type="button" class="utiliy" onClick="App.withdraw()">Withdraw money</button></h3>
-      </form>
-
-
-</div>
-<br>
- <button type="button" onClick="App.updateVotes()">Check your proposal status</button>
- <h5>Make sure to call through beneficiary account</h5>
- <span id="status" class="final"></span>
-
- 
-  <span id="myprop" class="final"></span>
-  <br>
-  <br>
-  <button type="button" onClick="App.getAllc()">Know our contributors</button><br>
-  <span id="allC" class="final"></span>
-  <br>
-  <br>
-
-
-
-  </div>
-  <br>
-  <br>
-  <div class="Owner">
-    <b>Contract Balance: </b> <span id="bal"></span>
-    
-    <br>
-
-      <b>OWNER:</b>
-    <span id="owner"></span>
-
-  </div>
-<hr>
-<br>
-<b class="Owner">Events</b>
-<hr>
-  <div class="Owner">
-    
-    <span id="events"></span>
-
-  </div>
-
+	<footer>
+        <p class="footer-p">
+            CONNECT WITH ME
+        </p>
+        <div class = "share">
+            <a href="https://ie.linkedin.com/urja-pawar-11047a113"><img src="blogs/images/linkedin.svg"></a>
+            <!-- <a href="https://www.instagram.com/urja.pawar/"><img src="blogs/images/instagram.svg"></a> -->
+        </div>
+    </footer>
 
 </body>
 </html>

@@ -1,0 +1,138 @@
+/* this has the classes for various gradients */
+/* gradients can be made here:  */
+/* box shadow can be found here: https://www.cssmatic.com/box-shadow */
+
+.grad-1 {
+	background: rgb(215,49,76);
+	background: linear-gradient(62deg, rgba(212,193,89,1) 0%, rgba(215,49,76,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-1:hover {
+	-webkit-box-shadow: 0 0px 12px 5px rgba(229, 66, 10, 0.75);
+	-moz-box-shadow: 0 0px 12px 5px rgba(229, 66, 10, 0.75);
+	box-shadow: 0 0px 12px 5px rgba(229, 66, 10, 0.75);
+}
+
+.grad-2 {
+	background: rgb(49,82,215);
+	background: linear-gradient(275deg, rgba(49,82,215,1) 0%, rgba(89,212,154,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-2:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgba(49, 196, 190, 0.75);
+	-moz-box-shadow: 0 0px 12px 5px rgba(49, 196, 190, 0.75);
+	box-shadow: 0 0px 12px 5px rgba(49, 196, 190, 0.75);
+}
+
+.grad-3 {
+	background: rgb(230,100,110);
+	background: linear-gradient(230deg, rgba(230,100,110,1) 0%, rgba(43,191,204,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-3:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgba(230, 100, 110, 0.75);
+	-moz-box-shadow: 0 0px 12px 5px rgba(230, 100, 110, 0.75);
+	box-shadow: 0 0px 12px 5px rgba(230, 100, 110, 0.75);
+}
+
+.grad-4 {
+	background: rgb(34,193,195);
+	background: linear-gradient(25deg, rgba(34,193,195,1) 0%, rgba(253,187,45,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-4:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgba(181,230,89,1);
+	-moz-box-shadow: 0 0px 12px 5px rgba(181,230,89,1);
+	box-shadow: 0 0px 12px 5px rgba(181,230,89,1);
+}
+
+.grad-5 {
+	background: rgb(253,255,197);
+	background: linear-gradient(25deg, rgba(253,255,197,1) 0%, rgba(126,102,48,1) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-5:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgba(204,176,130,1);
+	-moz-box-shadow: 0 0px 12px 5px rgba(204,176,130,1);
+	box-shadow: 0 0px 12px 5px rgba(204,176,130,1);
+}
+
+.grad-6 {
+	background: rgb(253,255,197);
+	background: linear-gradient(20deg, rgb(246, 197, 255) 0%, rgb(50, 92, 148) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-6:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgba(192,157,232,1);
+	-moz-box-shadow: 0 0px 12px 5px rgba(192,157,232,1);
+	box-shadow: 0 0px 12px 5px rgba(192,157,232,1);
+}
+
+.grad-7 {
+	background: rgb(253,255,197);
+    background: linear-gradient(20deg, rgb(158, 108, 145) 0%, rgb(111, 21, 9) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-7:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgba(84,49,49,1);
+	-moz-box-shadow: 0 0px 12px 5px rgba(84,49,49,1);
+	box-shadow: 0 0px 12px 5px rgba(84,49,49,1);
+}
+
+.grad-8 {
+	background: rgb(253,255,197);
+    background: linear-gradient(312deg, rgb(255, 98, 141) 0%, rgb(38, 31, 136) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-8:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgb(107, 102, 182);
+	-moz-box-shadow: 0 0px 12px 5px rgb(107, 102, 182);
+	box-shadow: 0 0px 12px 5px rgb(107, 102, 182);
+}
+
+.grad-9 {
+	background: rgb(253,255,197);
+    background: linear-gradient(351deg, rgb(60 12 65) 0%, rgb(14 168 184) 100%);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	color: white;
+}
+
+.shadow-9:hover{
+	-webkit-box-shadow: 0 0px 12px 5px rgb(19, 16, 68);
+	-moz-box-shadow: 0 0px 12px 5px rgb(19, 16, 68);
+	box-shadow: 0 0px 12px 5px rgb(19, 16, 68);
+}
